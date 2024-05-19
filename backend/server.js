@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: 'https://chat-application-git-deploy-r-katochs-projects.vercel.app',
+    origin: 'https://chat-application-hcy982ib1-r-katochs-projects.vercel.app/',
     methods: ['GET', 'POST'],
     credentials: true,
   },
@@ -18,7 +18,7 @@ const activeRooms = new Set();
 const activeUsers = new Set();
 
 app.use(cors({
-  origin: 'https://chat-application-git-deploy-r-katochs-projects.vercel.app',
+  origin: 'https://chat-application-hcy982ib1-r-katochs-projects.vercel.app/',
 }));
 
 const PORT = process.env.PORT || 3000;
