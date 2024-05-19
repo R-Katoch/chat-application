@@ -68,7 +68,7 @@ Visit http://localhost:3000 in your browser to see the application in action.
 
 # Deployment
 
-- **Frontend**: Frontend is deployed on Vercel. Visit https://chat-application-hcy982ib1-r-katochs-projects.vercel.app/ to see the application in action.
+- **Frontend**: Frontend is deployed on Vercel. Visit https://chat-application-644q4f7mx-r-katochs-projects.vercel.app/ to see the application in action.
 - **Backend**: Backend is deployed on Render. 
 
 # Thank you for using this project.
