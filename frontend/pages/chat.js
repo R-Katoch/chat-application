@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:3000'); // Adjust this URL to your server address
+const socket = io('https://chat-application-yug1.onrender.com'); // Adjust this URL to your server address
 
 export default function Chat() {
   const { query } = useRouter();

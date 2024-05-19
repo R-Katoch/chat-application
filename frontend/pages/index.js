@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:3000');
+const socket = io('https://chat-application-yug1.onrender.com');
 
 export default function Home() {
   const [username, setUsername] = useState('');
