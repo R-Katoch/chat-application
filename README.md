@@ -66,4 +66,9 @@ Visit http://localhost:3000 in your browser to see the application in action.
 - The frontend is responsive, ensuring a consistent experience across various devices and screen sizes.
 - The entire system is stateless, enabling real-time messaging between users in different chat rooms.
 
+# Deployment
 
+- **Frontend**: Frontend is deployed on Vercel. Visit https://chat-application-hcy982ib1-r-katochs-projects.vercel.app/ to see the application in action.
+- **Backend**: Backend is deployed on Render. 
+
+# Thank you for using this project.
