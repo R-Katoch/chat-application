@@ -5,9 +5,32 @@ const cors = require('cors');
 
 const app = express();
 const server = http.createServer(app);
+
+// Regex to match any subdomain or domain ending with "r-katochs-projects.vercel.app"
+const allowedDomain = /\.?r-katochs-projects\.vercel\.app$/;
+
+// CORS Middleware for Express
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedDomain.test(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'), false);
+    }
+  },
+  credentials: true,
+}));
+
+// Configuring Socket.IO to handle CORS dynamically
 const io = socketIo(server, {
   cors: {
-    origin: 'https://chat-application-hcy982ib1-r-katochs-projects.vercel.app',
+    origin: (origin, callback) => {
+      if (allowedDomain.test(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     methods: ['GET', 'POST'],
     credentials: true,
   },
@@ -16,10 +39,6 @@ const io = socketIo(server, {
 const chatHistory = {};
 const activeRooms = new Set();
 const activeUsers = new Set();
-
-app.use(cors({
-  origin: 'https://chat-application-hcy982ib1-r-katochs-projects.vercel.app',
-}));
 
 const PORT = process.env.PORT || 3000;
 
